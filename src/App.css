@@ -1,38 +1,182 @@
-.App {
-  text-align: center;
+*{
+  list-style: none;
+  margin:0px;
+  padding: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+
+/* Layout */
+
+.container{
+  display:grid;
+  gap:5rem;
+  grid-template-columns: 1fr;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
+  gap: 3rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+nav ul{
+  display: flex;
+  gap: 40px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+a{
+  text-decoration: none;
+  color:#000000;
 }
+
+
+.hero{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  gap: 10rem;
+  height: auto;
+  background-color: var( --color-green);
+  color: var( --color-white);
+  /* background-clip: content-box; */
+
+}
+
+.hero p{
+  width: 422px;
+  font-family: 'karla';
+  font-size: 20px;
+  font-weight: 400;
+  Line-height: 23.38px;
+  padding-bottom: 50px;
+}
+
+.hero h1{
+  font-size: 60px;
+  font-family: 'Markazi Text';
+  font-weight: 700px;
+  color: var( --color-yellow)
+}
+
+
+.hero h2{
+  font-size: 40px;
+  font-family: 'Markazi Text';
+  font-weight: 100;
+}
+
+.hero img{
+  border-radius: 8px;
+}
+
+.specials{
+  display: flex;
+  justify-content:center;
+  height: auto;
+  background-color: var( --color-white)
+}
+
+.specials img{
+  border-radius: 16px;
+}
+
+.specials h1{
+  font-size: 60px;
+  font-family: 'Markazi Text';
+  font-weight: 500px;
+  color: var( --color-gray);
+}
+
+.specials h2{
+  font-size: 24px;
+  font-family: 'Markazi Text';
+  font-weight: 500px;
+  color: var( --color-gray);
+}
+
+.testimonials{
+  display: flex;
+  justify-content: center;
+  height:590px;
+  background-color: var( --color-green)
+}
+
+.about{
+  display:flex;
+  justify-content: center;
+  height:581px;
+  background-color: var( --color-white)
+}
+
+.about p{
+  width: 370px;
+  height: 322px;
+  font-size: 20px;
+  font-weight: 700;
+  Line-height: 23.38px;
+}
+
+.about h1{
+  font-size: 64px;
+  font-family: 'Markazi Text';
+  font-weight: 500px;
+  Line-height:76.81px;
+}
+
+.about h6{
+  font-size: 40px;
+  font-family: 'Markazi Text';
+  font-weight: 400px;
+  Line-height: 48.01px;
+}
+
+.aboutComponent{
+  display: flex;
+}
+
+footer{
+  display:flex;
+  justify-content: center;
+  gap:40px;
+  background-color: var( --color-green)
+}
+
+.contactSection{
+  display: flex;
+  justify-content: flex-start;
+  align-items: left;
+  gap:40px;
+}
+
+.card{
+  width: 264px;
+  height: 439px;
+}
+
+.cardComponent{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5rem;
+  flex-basis: 1;
+}
+
+.specialsTitle{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 70px;
+}
+
+button{
+  width: 200px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: var(--color-yellow);
+  border:none;
+  font-size: 18px;
+  color: var(--color-gray);
+  padding: 10px;
+}
+
