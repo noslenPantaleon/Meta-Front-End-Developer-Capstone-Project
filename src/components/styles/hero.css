@@ -1,0 +1,54 @@
+.hero{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:minmax(300px, 100%);
+    align-items: flex-start;
+    height: minmax(60%, 100%);
+    gap: 30px;
+
+  }
+
+  .hero article{
+    padding-left: 3em;
+  }
+
+.hero p{
+    width: 422px;
+    font-family: 'karla';
+    font-size: 20px;
+    font-weight: 400;
+    Line-height: 23.38px;
+    padding-bottom: 50px;
+    color: var( --color-white);
+  }
+  .hero h1{
+    font-size: 60px;
+    font-family: 'Markazi Text';
+    font-weight: 700px;
+    color: var( --color-yellow)
+  }
+
+  .hero h2{
+    font-size: 40px;
+    font-family: 'Markazi Text';
+    font-weight: 100;
+    color: var( --color-white);
+  }
+
+  .hero img{
+    border-radius: 16px;
+    margin: 10px 10px 10px 10px;
+    width: auto;
+    max-width: 350px;
+    height: auto;
+    max-height: 300px;
+
+  }
+
+  /* width:150px;
+  height:100px;
+  background-size:cover; 
+  background-position:center center; 
+  background-repeat:no-repeat; 
+  background-image:url('somepic.jpg'); */

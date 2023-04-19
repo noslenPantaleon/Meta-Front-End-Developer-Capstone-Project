@@ -1,0 +1,101 @@
+nav {
+  position: fixed;
+  top:0px;
+  gap: 4rem;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  min-height: 6.25rem;
+  background-color: var(--color-white);
+  }
+
+  nav ul{
+    display: flex;
+    gap: 4rem;
+  }
+
+  .hamburguerNav{
+    gap: 4rem;
+    display: flex;
+    flex-direction: row;
+    min-width: 400px;
+    justify-content: center;
+    align-items: center;
+    min-height: 6.25rem;
+  }
+
+  .hamburguerNav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+.nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 3rem;
+}
+.nav__toggler {
+  display: none;
+}
+.nav__toggler div {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background:var(--color-green);
+  border-radius: 8px;
+  transition: 0.3s ease-in;
+  border: 2px;
+  border-color: blue;
+
+}
+
+@media screen and (max-width: 768px) {
+  .nav__toggler {
+    display: block;
+    cursor: pointer;
+    color:var(--color-green);
+  }
+  .nav__menu {
+    position: fixed;
+    top: 7vh;
+    right: 0;
+    height: 60vh;
+    padding: 5rem;
+    width: 50vw;
+    background: var(--color-green);
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: 0.5s ease-in;
+  }
+  a{
+    color:  var(--color-yellow);
+  }
+  
+a:hover{
+
+  color:var(--color-white);
+}
+
+}
+/* Active Class */
+.nav__active {
+  transform: translateX(0%);
+}
+
+/* Toggle Icon Animation */
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-4px, 5px);
+  color:var(--color-green);
+}
+.toggle .line2 {
+  opacity: 0;
+  color:var(--color-green);
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-4px, -5px);
+  color:var(--color-green);
+}

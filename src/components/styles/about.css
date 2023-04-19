@@ -1,0 +1,30 @@
+.aboutContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    flex-wrap: wrap;
+    gap: 50px
+  }
+
+.aboutSection p {
+    width: 370px;
+    height: minmax(200, 322);
+    font-size: 20px;
+    font-weight: 700;
+    Line-height: 23.38px;
+    }
+
+  .aboutSection h1{
+    font-size: 64px;
+    font-family: 'Markazi Text';
+    font-weight: 500px;
+    Line-height:76.81px;
+  }
+
+  .aboutSection h6{
+    font-size: 40px;
+    font-family: 'Markazi Text';
+    font-weight: 400px;
+    Line-height: 48.01px;
+  }
