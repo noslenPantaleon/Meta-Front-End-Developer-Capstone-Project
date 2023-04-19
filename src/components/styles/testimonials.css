@@ -1,0 +1,28 @@
+.reviewsContainer{
+    display: flex;
+    width: 300px;
+    height: 265px;
+    border-radius:8px;
+    gap:5rem;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+    background-color: var(--color-white);
+}
+
+.avatar {
+    vertical-align: middle;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+  }
+
+.pictures{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+
+  }
+
+  .reviewsContainer  p{
+    padding: 1rem;
+  }

@@ -1,0 +1,74 @@
+.cardContainer{
+    display: flex;
+    width: 100%;
+    width: 280px;
+    height: 435px;
+    gap: 5rem;
+    box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+}
+  @media only screen and (max-width: 600px) {
+    .cardContainer {
+      width: 380px;
+      height: 500px;
+      gap:2rem;
+    }
+
+    article > img{
+      width: 380px;
+      height: auto;
+    }
+  }
+
+.cardContainer img{
+  border-radius: 8px;
+}
+
+.cardContainer h1{
+  font-size: 60px;
+  font-family: 'Markazi Text';
+  font-weight: 500px;
+  color: var( --color-gray);
+}
+
+.cardContainer h2{
+  font-size: 24px;
+  font-family: 'Markazi Text';
+  font-weight: 500px;
+  color: var( --color-gray);
+}
+
+.cardContainer h3{
+  font-size: 16px;
+  font-weight: 500px;
+  color: var( --color-gray);
+}
+
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.order{
+  display: flex;
+  align-items: center;
+  padding-bottom: 40px;
+  width: 100%;
+}
+
+.cardContainer p, h6, h2, h3 {
+  padding: 0.5rem;
+}
+
+.cardContainer h6 {
+  font-size: 14px;
+  font-family: 'Markazi Text';
+ }
+
+.cardContainer p {
+ font-size: 16px;
+}
+.cardContainer:hover{
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
