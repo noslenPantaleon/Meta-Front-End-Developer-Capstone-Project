@@ -1,12 +1,12 @@
-import React from 'react';
-import Testimonials from '../components/Testimonials';
-import About from '../components/About';
+import  React from 'react';
+import Testimonials from './Testimonials';
+import About from './About';
 import Specials from './Specials';
 import Hero from './Hero';
 import { SPECIALS } from '../constants/specials';
 import { ABOUT } from '../constants/about';
 import { HERO } from '../constants/hero';
-import '../components/styles/main.css';
+import './styles/main.css';
 import { TESTIMONIALS } from '../constants/testimonials';
 
 const Main = () => {
@@ -14,19 +14,21 @@ const Main = () => {
     <main>
       <section className='heroSection'>
         {HERO.map((hero) => (
-          <Hero
-            title={hero.title}
-            subtitle={hero.subtitle}
-            description={hero.description}
-            buttonName={hero.buttonName}
-            pict={hero.image}
-          />
+          <article key= {hero.id}>
+            <Hero
+              title={hero.title}
+              subtitle={hero.subtitle}
+              description={hero.description}
+              buttonName={hero.buttonName}
+              pict={hero.image}
+            />
+          </article>
         ))}
       </section>
 
       <section className='specialsTitle'>
         <h1>This Week Specials!</h1>
-        <button>Online Menu</button>
+        <button className='primayButton'>Online Menu</button>
       </section>
 
       <section className='specialSection'>
@@ -55,15 +57,17 @@ const Main = () => {
         ))}
       </section>
 
-      <section className='aboutSection'>
+      <section id= 'about' className='aboutSection'>
         {ABOUT.map((about) => (
-          <About
-            title={about.title}
-            subtitle={about.subtitle}
-            description={about.description}
-            imageA={about.imageA}
-            imageB={about.imageB}
-          />
+          <article key={about.id}>
+            <About
+              title={about.title}
+              subtitle={about.subtitle}
+              description={about.description}
+              imageA={about.imageA}
+              imageB={about.imageB}
+            />
+          </article>
         ))}
       </section>
     </main>

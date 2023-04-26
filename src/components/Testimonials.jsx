@@ -8,7 +8,7 @@ const Testimonials = ({ name, picture, review, stars }) => {
       <article>
         <div className='pictures'>
           <img src={starts} alt='review' width={100} />
-          <img class='avatar' src={picture} alt='review' />
+          <img className='avatar' src={picture} alt='review' />
           <h4>{name}</h4>
         </div>
         <p>{review}</p>

@@ -3,6 +3,7 @@ import aboutPictureB from '../images/icons_assets/MarioandAdrianB.jpg';
 
 export const ABOUT = [
   {
+    id: 1,
     title: 'Little Lemon',
     subtitle: 'Chicago',
     description:

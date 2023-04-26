@@ -2,6 +2,7 @@ import image from '../images/icons_assets/restaurant chef B.jpg';
 
 export const HERO = [
   {
+    id: 1,
     title: 'Little Lemon',
     subtitle: 'Chicago',
     description:

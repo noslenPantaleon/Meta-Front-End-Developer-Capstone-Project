@@ -34,7 +34,7 @@ a:hover{
     color:var(--color-green);
 }
 
-button{
+.primayButton{
   width: 150px;
   height: 40px;
   border-radius: 8px;
@@ -45,7 +45,7 @@ button{
   padding: 10px;
 }
 
- button:hover{
+.primayButton:hover{
   background-color: rgb(252, 252, 141);
   width: 147px;
   height: 40px;
