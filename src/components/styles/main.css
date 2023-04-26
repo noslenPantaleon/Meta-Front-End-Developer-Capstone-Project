@@ -53,8 +53,3 @@
     padding-bottom:4rem;
   }
 
-  footer{
-    display:flex;
-    justify-content: center;
-    background-color: var( --color-green)
-  }

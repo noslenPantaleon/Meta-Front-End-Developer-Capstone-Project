@@ -39,18 +39,18 @@ const Footer = () => {
         <article>
           <h4>Contact</h4>
           <ul>
-            <a>
+            <a  href='./'>
               <BiMap size={20} />
               <li>
                 481 Rockwell Lane<br></br>
                 Jackson Heights, NY 11372
               </li>
             </a>
-            <a>
+            <a href='./'>
               <BsWhatsapp />
               <li>001(5788433)</li>
             </a>
-            <a>
+            <a href='./'>
               <MdOutlineEmail />
               <li>littlelemon@contact.com</li>
             </a>
