@@ -2,7 +2,7 @@ const INITIAL_STATE = {
   name: '',
   email: '',
   date: '',
-  time: ['9:00'],
+  time: '',
   numberOfGuest: '',
   occasion: '',
   message: '',
@@ -14,7 +14,7 @@ const ACTION = {
   DATE: 'date',
   TIME: 'time',
   GUEST: 'numberOfGuest',
-  OCCASION: 'ocassion',
+  OCCASION: 'occasion',
   MESSAGE: 'message',
 };
 
@@ -24,6 +24,12 @@ const formReducer = (state, action) => {
       return {
         ...state,
         name: action.payload,
+      };
+
+    case ACTION.EMAIL:
+      return {
+        ...state,
+        email: action.payload,
       };
     case ACTION.DATE:
       return {
