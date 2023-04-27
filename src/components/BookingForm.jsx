@@ -1,48 +1,65 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './styles/booking.css';
-import {useFormStore,useFormDispatch} from '../store/formContext';
-import { ACTION} from '../store/formReducer';
+import {useFormStore} from '../store/formContext';
+import useForm from '../hooks/useForm';
 
 const BookingForm = () => {
-   const {name, ocassion, email, date, time, numberOfGuest, message}= useFormStore();
-   const dispatch= useFormDispatch();
+   const {name, occasion, email, date, time, numberOfGuest, message}= useFormStore();
 
-   const handleFormSubmit = e => {
-      e.preventDefault();
-      //   submitData({ date, time, numberOfGuests, occasion, });
-      };
+   useEffect(() => {
+      JSON.parse(localStorage.getItem('dataKey'));
+    }, []);
+
+   const {
+      handleName,
+      handleEmail,
+      handleDate,
+      handleTime,
+      handleGuest,
+      handleMessage,
+      handleFormSubmit,
+      handleOccasion,
+      timeSlots,
+   }=useForm();
+
 
   return (
    <>
 <form onSubmit={handleFormSubmit} className='bookingContainer' >
 
-<label htmlFor="name">Name</label >
-<input type="text"
- name="fname"
- id="re-name"
- value={name}
- onChange={ (e) => dispatch({type:ACTION.NAME, payload: e.target.value,})}/>
+   <label htmlFor="name">Name</label >
+   <input type="text"
+   name="fname"
+   id="re-name"
+   value={name}
+   onChange={ handleName}/>
 
-<label htmlFor="email">Your Email  </label>
-          <input
-            value={email}
-            onChange={ (e) => dispatch({type:ACTION.EMAIL, payload: e.target.value,})}
-            type="email"
-            id="email"/>
+   <label htmlFor="email">Your Email  </label>
+   <input
+   value={email}
+   onChange={ handleEmail}
+   type="email"
+   id="email"/>
 
-   <label htmlFor="res-time">Choose date</label>
+   <label htmlFor="res-date">Choose Date</label>
    <input
    type="date"
    id="res-date"
-   value={date}/>
+   value={date}
+   onChange={ handleDate}/>
+
+
   <label htmlFor="res-time">Choose Time</label>
    <select
    id="res-time"
    value={time}
-   onChange={ (e) =>  dispatch({type: ACTION.DATE, payload: e.target.value})}
+   onChange={ handleTime}
    >
-
-   <option>{time}</option>
+   {timeSlots.map((slots, index)=>(
+      <option key={index}>
+         {slots}
+      </option>
+   ))};
    </select>
 
    <label htmlFor="guests">Number of guests</label>
@@ -51,18 +68,19 @@ const BookingForm = () => {
       placeholder="1"
       min="1"
       max="10"
-      // onChange={ (e) =>  dispatch({type: ACTION.GUEST, payload: e.target.value})}
+      value={numberOfGuest}
+      onChange={handleGuest}
       id="guests"/>
 
    <label htmlFor="occasion">Occasion</label>
    <select
    id="occasion"
-   value={ocassion}
-   onChange={(e)=>dispatch({type:ACTION.OCCASION, payload: e.target.value})}
-   >
-           <option value="birthday">Birthday</option>
-            <option value="engagement">Engagement</option>
-            <option value="anniversary">Anniversary</option>
+   value={occasion}
+   onChange={handleOccasion}>
+
+   <option value="birthday">Birthday</option>
+   <option value="engagement">Engagement</option>
+   <option value="anniversary">Anniversary</option>
    </select>
 
    <label htmlFor="message">Additional requests  </label>
@@ -71,11 +89,9 @@ const BookingForm = () => {
          id="message"
          cols="30"
          rows="10"
-         required
          value={message}
-         onChange={(e)=>dispatch({type:ACTION.MESSAGE, payload: e.target.value})}>
-
-          </textarea>
+         onChange={handleMessage}>
+   </textarea>
 
    <div>
    <button className='formButton' >Make Your reservation</button>
