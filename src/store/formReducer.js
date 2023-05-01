@@ -1,11 +1,19 @@
+const storedName = JSON.parse(localStorage.getItem('dataKey'))[0];
+const storedEmail = JSON.parse(localStorage.getItem('dataKey'))[1];
+const storedDate = JSON.parse(localStorage.getItem('dataKey'))[2];
+const storedTime = JSON.parse(localStorage.getItem('dataKey'))[3];
+const storedGuest = JSON.parse(localStorage.getItem('dataKey'))[4];
+const storedOcassion = JSON.parse(localStorage.getItem('dataKey'))[5];
+const storedMessage = JSON.parse(localStorage.getItem('dataKey'))[6];
+
 const INITIAL_STATE = {
-  name: '',
-  email: '',
-  date: '',
-  time: '',
-  numberOfGuest: '',
-  occasion: '',
-  message: '',
+  name: storedName ? storedName : '',
+  email: storedEmail ? storedEmail : '',
+  date: storedDate ? storedDate : '',
+  time: storedTime ? storedTime : '',
+  numberOfGuest: storedGuest ? storedGuest : '',
+  occasion: storedOcassion ? storedOcassion : '',
+  message: storedMessage ? storedMessage : '',
 };
 
 const ACTION = {
@@ -18,7 +26,7 @@ const ACTION = {
   MESSAGE: 'message',
 };
 
-const formReducer = (state, action) => {
+const FormReducer = (state, action) => {
   switch (action.type) {
     case ACTION.NAME:
       return {
@@ -52,6 +60,7 @@ const formReducer = (state, action) => {
         ...state,
         occasion: action.payload,
       };
+
     case ACTION.MESSAGE:
       return {
         ...state,
@@ -65,4 +74,4 @@ const formReducer = (state, action) => {
 
 export { ACTION, INITIAL_STATE };
 
-export default formReducer;
+export default FormReducer;
