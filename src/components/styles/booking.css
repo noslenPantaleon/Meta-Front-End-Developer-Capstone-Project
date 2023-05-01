@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     width: 100vh;
-    height:85vh;
+    height:100vh;
     padding-bottom: 5rem;
 }
 
@@ -50,4 +50,8 @@ label{
     font-size: 17px;
     color:#495E57;
     box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+  }
+  .error{
+    color: red;
+    font-size: 12px;
   }

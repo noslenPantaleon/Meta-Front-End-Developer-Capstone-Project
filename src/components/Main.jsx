@@ -10,6 +10,7 @@ import './styles/main.css';
 import { TESTIMONIALS } from '../constants/testimonials';
 
 const Main = () => {
+
   return (
     <main>
       <section className='heroSection'>

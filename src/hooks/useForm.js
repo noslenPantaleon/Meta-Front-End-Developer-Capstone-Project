@@ -1,40 +1,15 @@
 import { fetchAPI, submitAPI } from '../services/api';
-import { useFormStore, useFormDispatch } from '../store/formContext';
+import { useFormDispatch } from '../store/formContext';
 import { ACTION } from '../store/formReducer';
 import { useEffect, useState } from 'react';
 
 const useForm = () => {
-  const [data, setData] = useState([]);
   useEffect(() => {
-    setTimeSlots(fetchAPI(new Date(Date.now())));
+    const today = new Date(Date.now());
+    setTimeSlots(['']);
+    setTimeSlots(fetchAPI(new Date(today)));
   }, []);
 
-  useEffect(() => {
-    localStorage.setItem(
-      'dataKey',
-      JSON.stringify([
-        {
-          name,
-          occasion,
-          email,
-          date,
-          time,
-          numberOfGuest,
-          message,
-        },
-      ])
-    );
-  }, [data]);
-
-  const {
-    name,
-    occasion,
-    email,
-    date,
-    time,
-    numberOfGuest,
-    message,
-  } = useFormStore();
   const dispatch = useFormDispatch();
   const [timeSlots, setTimeSlots] = useState(['']);
 
@@ -56,52 +31,41 @@ const useForm = () => {
 
   const handleTime = (e) => {
     dispatch({ type: ACTION.TIME, payload: e.target.value });
-  };
-  const handleGuest = (e) => {
-    dispatch({ type: ACTION.GUEST, payload: e.target.value });
+    // setTimeSlots([...timeSlots].filter((time) => time !== e.target.value));
+    // console.log('handle times', timeSlots);
   };
 
-  const handleMessage = (e) => {
-    dispatch({ type: ACTION.MESSAGE, payload: e.target.value });
+  const handleGuest = (e) => {
+    dispatch({ type: ACTION.GUEST, payload: e.target.value });
   };
 
   const handleOccasion = (e) => {
     dispatch({ type: ACTION.OCCASION, payload: e.target.value });
   };
+  const handleMessage = (e) => {
+    dispatch({ type: ACTION.MESSAGE, payload: e.target.value });
+  };
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setData({
-      name,
-      occasion,
-      email,
-      date,
-      time,
-      numberOfGuest,
-      message,
-    });
-
-    submitAPI([
-      {
-        name,
-        occasion,
-        email,
-        date,
-        time,
-        numberOfGuest,
-        message,
-      },
-    ]);
+  const handleSubmit = (values) => {
+    submitAPI(values);
+    setTimeSlots(['']);
+    dispatch({ type: ACTION.DATE, payload: '' });
+    dispatch({ type: ACTION.TIME, payload: '' });
+    dispatch({ type: ACTION.NAME, payload: '' });
+    dispatch({ type: ACTION.EMAIL, payload: '' });
+    dispatch({ type: ACTION.OCCASION, payload: '' });
+    dispatch({ type: ACTION.GUEST, payload: '' });
+    dispatch({ type: ACTION.MESSAGE, payload: '' });
   };
 
   return {
-    handleName,
-    handleEmail,
     handleDate,
     handleTime,
+    handleSubmit,
+    handleName,
+    handleEmail,
     handleGuest,
     handleMessage,
-    handleFormSubmit,
     handleOccasion,
     timeSlots,
   };
