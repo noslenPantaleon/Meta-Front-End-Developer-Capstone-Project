@@ -31,8 +31,25 @@ a, li{
 
 a:hover{
 
-    color:var(--color-green);
+    color:var(--color-yellow);
 }
+
+a, li{
+  list-style: none;
+  text-decoration: none;
+  color: #333333;
+}
+
+
+a:active{
+    color:var(--color-yellow);
+}
+
+
+a:focus{
+  color:var(--color-yellow);
+}
+
 
 .primayButton{
   width: 150px;

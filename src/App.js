@@ -13,11 +13,11 @@ function App() {
         <Router>
           <Header />
           <Routes>
-            <Route path='/' element={<Main />} />
-            <Route path='/reservations' element={<BookingPage />} />
+            <Route path='/' exact element={<Main />} />
+            <Route path='/reservations' exact element={<BookingPage />} />
           </Routes>
+          <Footer />
         </Router>
-        <Footer />
       </FormProvider>
     </div>
   );
