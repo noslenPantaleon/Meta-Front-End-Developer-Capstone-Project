@@ -8,6 +8,7 @@ nav {
   align-items: center;
   min-height: 6.25rem;
   background-color: var(--color-white);
+  transition: width 2s, height 2s, transform 1s;
   }
 
   nav ul{
@@ -31,6 +32,10 @@ nav {
     gap: 4rem;
   }
 
+  .active{
+    font-weight: 700;
+    color:var(--color-green);
+  }
 .nav__menu {
   display: flex;
   align-items: center;

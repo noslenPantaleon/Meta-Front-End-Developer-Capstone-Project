@@ -1,11 +1,12 @@
 import logo from '../images/icons_assets/Logo.svg';
 import './styles/nav.css';
-// import  HamburgerNav from '../components/HamburgerNav';
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   const [active, setActive] = useState("nav__menu");
   const [icon, setIcon] = useState("nav__toggler");
+  const headerRef = useRef(null);
 
   const navToggle = () => {
     if (active === "nav__menu") {
@@ -17,29 +18,55 @@ const Nav = () => {
       setIcon("nav__toggler toggle");
     } else setIcon("nav__toggler");
   };
-  return (
-    <nav >
+
+  useEffect(() => {
+      let prevScrollPos = window.scrollY;
+
+      const handleScroll = () => {
+          const currentScrollPos = window.scrollY;
+          const headerElement = headerRef.current;
+          if (!headerElement) {
+              return;
+          }
+          if (prevScrollPos > currentScrollPos) {
+              headerElement.style.transform = "translateY(0)";
+          } else {
+              headerElement.style.transform = "translateY(-200px)";
+          }
+          prevScrollPos = currentScrollPos;
+      }
+      window.addEventListener('scroll', handleScroll)
+
+      return () => {
+          window.removeEventListener('scroll', handleScroll)
+      }
+  }, []);
+
+  const handleClick = (anchor) => () => {
+      const id = `${anchor}-section`;
+      const element = document.getElementById(id);
+      if (element) {
+          element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+          });
+      }
+    };
+
+    return (
+      <nav ref={headerRef}>
+        <Link exact to="/">
       <img src={logo} alt='logo' />
+        </Link>
       <ul className={active}>
-        <li>
-          <a href='./'>Home </a>
-        </li>
-        <li>
-          <a href='./about'>About </a>
-        </li>
-        <li>
-          <a href='./Menu'>Menu </a>
-        </li>
-        <li>
-          <a href='./reservations'>Reservations </a>
-        </li>
-        <li>
-          <a href='./Orders'> Order Online </a>
-        </li>
-        <li>
-          <a href='./login'>login </a>
-        </li>
+        <li><Link exact to="/" onClick={handleClick("home")}> Home </Link></li>
+        <li><Link exact to="/#about-section"  onClick={handleClick("about")}>About</Link></li>
+        <li ><Link exact to= "/#menu-section" onClick={handleClick("menu")} >Menu</Link></li>
+        <li><Link exact to="/Reservations" >Reservations </Link></li>
+        <li><Link exact to="/orders">Order Online</Link></li>
+        <li><Link exact to="/login">Login</Link></li>
       </ul>
+
       <div onClick={navToggle} className={icon}>
         <div className="line1"></div>
         <div className="line2"></div>

@@ -8,12 +8,14 @@ import { ABOUT } from '../constants/about';
 import { HERO } from '../constants/hero';
 import './styles/main.css';
 import { TESTIMONIALS } from '../constants/testimonials';
+import { Link } from "react-router-dom";
+
 
 const Main = () => {
 
   return (
     <main>
-      <section className='heroSection'>
+      <section id='home-section' className='heroSection'>
         {HERO.map((hero) => (
           <article key= {hero.id}>
             <Hero
@@ -27,9 +29,11 @@ const Main = () => {
         ))}
       </section>
 
-      <section className='specialsTitle'>
+      <section  id = 'menu-section' className='specialsTitle'>
         <h1>This Week Specials!</h1>
+        <Link link to= './orders'>
         <button className='primayButton'>Online Menu</button>
+        </Link>
       </section>
 
       <section className='specialSection'>
@@ -45,7 +49,7 @@ const Main = () => {
         ))}
       </section>
 
-      <section className='testimonialSection'>
+      <section id='testimonials-section' className='testimonialSection'>
         {TESTIMONIALS.map((review) => (
           <article key={review.id}>
             <Testimonials
@@ -58,7 +62,7 @@ const Main = () => {
         ))}
       </section>
 
-      <section id= 'about' className='aboutSection'>
+      <section id= 'about-section' className='aboutSection'>
         {ABOUT.map((about) => (
           <article key={about.id}>
             <About
