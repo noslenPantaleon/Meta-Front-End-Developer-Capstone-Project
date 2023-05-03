@@ -2,6 +2,7 @@ import { fetchAPI, submitAPI } from '../services/api';
 import { useFormDispatch } from '../store/formContext';
 import { ACTION } from '../store/formReducer';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const useForm = () => {
   useEffect(() => {
@@ -12,6 +13,7 @@ const useForm = () => {
 
   const dispatch = useFormDispatch();
   const [timeSlots, setTimeSlots] = useState(['']);
+  const navigate = useNavigate();
 
   const initializeTimes = (e) => {
     setTimeSlots(fetchAPI(new Date(e)));
@@ -56,6 +58,7 @@ const useForm = () => {
     dispatch({ type: ACTION.OCCASION, payload: '' });
     dispatch({ type: ACTION.GUEST, payload: '' });
     dispatch({ type: ACTION.MESSAGE, payload: '' });
+    navigate('/confirmation');
   };
 
   return {

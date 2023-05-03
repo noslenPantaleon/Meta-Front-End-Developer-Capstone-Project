@@ -55,16 +55,16 @@ const Nav = () => {
 
     return (
       <nav ref={headerRef}>
-        <Link exact to="/">
+        <Link exact="true" to="/">
       <img src={logo} alt='logo' />
         </Link>
       <ul className={active}>
-        <li><Link exact to="/" onClick={handleClick("home")}> Home </Link></li>
-        <li><Link exact to="/#about-section"  onClick={handleClick("about")}>About</Link></li>
-        <li ><Link exact to= "/#menu-section" onClick={handleClick("menu")} >Menu</Link></li>
-        <li><Link exact to="/Reservations" >Reservations </Link></li>
-        <li><Link exact to="/orders">Order Online</Link></li>
-        <li><Link exact to="/login">Login</Link></li>
+        <li><Link to="/" onClick={handleClick("home")}> Home </Link></li>
+        <li><Link to="/#about-section"  onClick={handleClick("about")}>About</Link></li>
+        <li><Link to= "/#menu-section" onClick={handleClick("menu")} >Menu</Link></li>
+        <li><Link to="/reservations" >Reservations </Link></li>
+        <li><Link to="/underconstruction">Order Online</Link></li>
+        <li><Link to="/underconstruction">Login</Link></li>
       </ul>
 
       <div onClick={navToggle} className={icon}>

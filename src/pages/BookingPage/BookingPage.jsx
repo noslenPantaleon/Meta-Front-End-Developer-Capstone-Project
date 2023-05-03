@@ -1,4 +1,4 @@
-import React, { useEffect} from 'react';
+import React from 'react';
 import BookingForm from '../../components/BookingForm';
 import './bookingPage.css';
 import useForm from '../../hooks/useForm';

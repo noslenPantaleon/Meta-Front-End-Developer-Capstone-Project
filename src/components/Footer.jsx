@@ -29,12 +29,12 @@ const Footer = () => {
       <section className='footerContainer'>
         <ul>
           <img src={logo} alt='logo' />
-          <li><Link exact to="/" onClick={handleClick("home")}> Home </Link></li>
-          <li><Link exact to="/#about-section"  onClick={handleClick("about")}>About</Link></li>
-          <li ><Link exact to= "/#menu-section" onClick={handleClick("menu")} >Menu</Link></li>
-          <li><Link exact to="/Reservations" >Reservations </Link></li>
-          <li><Link exact to="/orders">Order Online</Link></li>
-          <li><Link exact to="/login">Login</Link></li>
+          <li><Link  to="/" onClick={handleClick("home")}> Home </Link></li>
+          <li><Link  to="/#about-section"  onClick={handleClick("about")}>About</Link></li>
+          <li ><Link to= "/#menu-section" onClick={handleClick("menu")} >Menu</Link></li>
+          <li><Link  to="/Reservations" >Reservations </Link></li>
+          <li><Link  to="/orders">Order Online</Link></li>
+          <li><Link  to="/login">Login</Link></li>
         </ul>
 
         <article>
