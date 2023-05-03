@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './styles/booking.css';
 import {useFormStore} from '../store/formContext';
 import useForm from '../hooks/useForm';
@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 const BookingForm = ({availableTime}) => {
    const {name, email, date, time, numberOfGuest, occasion, message }= useFormStore();
    const availableSlots= Object.values(availableTime)
+   const [isloading, setIsloading]= useState(false)
 
    useEffect(() => {
       localStorage.setItem('dataKey', JSON.stringify([name, email, date, time, numberOfGuest, occasion, message]));
@@ -49,6 +50,8 @@ const BookingForm = ({availableTime}) => {
     }
 
 
+
+
    const {
       handleName,
       handleEmail,
@@ -70,9 +73,9 @@ const BookingForm = ({availableTime}) => {
          occasion,
          message,
      },
-     onSubmit: (values, actions,   ) => {
-
-      handleSubmit(values)
+     onSubmit: (values, actions,) => {
+      setIsloading(true)
+      setTimeout(() =>handleSubmit(values), 3000);
       actions.resetForm();
     },
 
@@ -96,7 +99,7 @@ const BookingForm = ({availableTime}) => {
 
   return (
    <>
-<form onSubmit={formik.handleSubmit} className='bookingContainer' >
+<form onSubmit= {(e) => {e.preventDefault(); formik.handleSubmit(e)}} className='bookingContainer' >
 
    <label htmlFor="name">Name</label >
    <input type="text"
@@ -180,7 +183,8 @@ const BookingForm = ({availableTime}) => {
          {formik.errors.message && formik.touched.message && <p className="error"> {formik.errors.message}</p>}
 
    <div>
-   <button type='submit' className='formButton' aria-label="On Click" >Make Your reservation</button>
+      {isloading? <span className='loader'></span>:<button type='submit' className='formButton' aria-label="On Click" >Make Your reservation</button>}
+
    </div>
 
 </form>

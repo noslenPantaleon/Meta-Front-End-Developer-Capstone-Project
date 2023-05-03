@@ -72,6 +72,27 @@ a:focus{
 }
 
 
+.successButton{
+  width:200px;
+  height: 40px;
+  border-radius: 8px;
+  background-color: var(--color-yellow);
+  border:none;
+  font-size: 18px;
+  color: var(--color-white);
+  padding: 10px;
+  margin-top: 2rem;
+}
+
+.successButton:hover{
+  background-color: rgb(252, 252, 141);
+  width:180px;
+  height: 40px;
+  font-size: 17px;
+  color:#495E57;
+  box-shadow: 0.5px 0.5px 0.5px 0.5px rgba(0, 0, 0, 0.1);
+}
+
 
 /*layaout*/
 
@@ -83,7 +104,6 @@ a:focus{
   "footer footer footer";
   grid-template-rows: 100px repeat(3, 1fr) 300px;
   grid-template-columns: 15% 1fr 15%;
-  grid-gap: 10px;
   height: 100vh;
 }
 
