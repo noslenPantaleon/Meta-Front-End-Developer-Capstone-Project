@@ -9,8 +9,8 @@ const Specials = ({ title, price, image, description }) => {
         <article>
           <img src={image} alt='specials' width={280} height={200} />
           <div className='title'>
-            <h2>{title}</h2>
-            <h3>{price}</h3>
+            <h3>{title}</h3>
+            <h4>{price}</h4>
           </div>
           <p>{description}</p>
           <div className='order'>

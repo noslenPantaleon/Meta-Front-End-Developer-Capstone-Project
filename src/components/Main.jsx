@@ -31,7 +31,7 @@ const Main = () => {
 
       <section  id = 'menu-section' className='specialsTitle'>
         <h1>This Week Specials!</h1>
-        <Link link to= './orders'>
+        <Link to= './orders'>
         <button className='primayButton'>Online Menu</button>
         </Link>
       </section>

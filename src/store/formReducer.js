@@ -16,6 +16,16 @@ const INITIAL_STATE = {
   message: storedMessage ? storedMessage : '',
 };
 
+// const INITIAL_STATE = {
+//   name: '',
+//   email: '',
+//   date: '',
+//   time: '',
+//   numberOfGuest: '',
+//   occasion: '',
+//   message: '',
+// };
+
 const ACTION = {
   NAME: 'name',
   EMAIL: 'email',

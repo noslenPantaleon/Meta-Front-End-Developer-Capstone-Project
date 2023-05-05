@@ -55,7 +55,7 @@ const Nav = () => {
 
     return (
       <nav ref={headerRef}>
-        <Link exact="true" to="/">
+        <Link  to="/">
       <img src={logo} alt='logo' />
         </Link>
       <ul className={active}>
