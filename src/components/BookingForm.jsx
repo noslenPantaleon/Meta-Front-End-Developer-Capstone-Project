@@ -1,14 +1,25 @@
 import React, {useEffect, useState} from 'react';
 import './styles/booking.css';
-import {useFormStore} from '../store/formContext';
 import useForm from '../hooks/useForm';
 import { useFormik } from "formik";
 import * as Yup from 'yup';
+import { useNavigate } from 'react-router-dom';
+import {useFormStore} from '../store/formContext';
 
 const BookingForm = ({availableTime}) => {
+
+   // const {state}= useForm();
+   // const{name}= state.name;
+   // const{email}= state.email;
+   // const{time}= state.time;
+   // const{occasion}= state.occasion;
+   // const{numberOfGuest }= state.numberOfGuest;
+   // const{message}= state.message;
+   // const{date}= state.date;
    const {name, email, date, time, numberOfGuest, occasion, message }= useFormStore();
    const availableSlots= Object.values(availableTime)
    const [isloading, setIsloading]= useState(false)
+   const navigate = useNavigate();
 
    useEffect(() => {
       localStorage.setItem('dataKey', JSON.stringify([name, email, date, time, numberOfGuest, occasion, message]));
@@ -49,9 +60,6 @@ const BookingForm = ({availableTime}) => {
       handleMessage(e);
     }
 
-
-
-
    const {
       handleName,
       handleEmail,
@@ -76,6 +84,7 @@ const BookingForm = ({availableTime}) => {
      onSubmit: (values, actions,) => {
       setIsloading(true)
       setTimeout(() =>handleSubmit(values), 3000);
+      setTimeout(() =>navigate('/confirmation'), 1000);
       actions.resetForm();
     },
 
@@ -106,6 +115,7 @@ const BookingForm = ({availableTime}) => {
    name="name"
    id="name"
    value={name}
+   onBlur= {formik.handleBlur}
    onChange={onhandleName}/>
    {formik.errors.name && formik.touched.name && <p className="error"> {formik.errors.name}</p>}
 
@@ -113,6 +123,7 @@ const BookingForm = ({availableTime}) => {
    <input
    type="email"
    id="email"
+   onBlur= {formik.handleBlur}
    onChange={onhandleEmail}
    value={email}/>
 
@@ -124,6 +135,7 @@ const BookingForm = ({availableTime}) => {
    type="date"
    id="date"
    value={date}
+   onBlur= {formik.handleBlur}
    onChange={onChangeDate} />
    {formik.errors.date && formik.touched.date && <p className="error"> {formik.errors.date}</p>}
 
@@ -133,6 +145,7 @@ const BookingForm = ({availableTime}) => {
    id="time"
    name= "time"
    value={time}
+   onBlur= {formik.handleBlur}
    onChange={onChangeTime}>
    <option>
    Please choose first the date
@@ -153,6 +166,7 @@ const BookingForm = ({availableTime}) => {
       name="numberOfGuest"
       id="guests"
       value={numberOfGuest}
+      onBlur= {formik.handleBlur}
       onChange={onhandleGuest}/>
       {formik.errors.numberOfGuest && formik.touched.numberOfGuest && <p className="error"> {formik.errors.numberOfGuest}</p>}
 
@@ -162,6 +176,7 @@ const BookingForm = ({availableTime}) => {
    id="occasion"
    name="occasion"
    value={occasion}
+   onBlur= {formik.handleBlur}
    onChange={onhandleOcassion}>
    <option value="Select one">Select one</option>
    <option value="birthday">Birthday</option>
@@ -183,7 +198,7 @@ const BookingForm = ({availableTime}) => {
          {formik.errors.message && formik.touched.message && <p className="error"> {formik.errors.message}</p>}
 
    <div>
-      {isloading? <span className='loader'></span>:<button type='submit' className='formButton' aria-label="On Click" >Make Your reservation</button>}
+      {isloading? <span className='loader'></span>:<button name ='submit'type='submit' className='formButton' aria-label="On Click"  >Make Your reservation</button>}
 
    </div>
 

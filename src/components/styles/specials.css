@@ -30,14 +30,14 @@
   color: var( --color-gray);
 }
 
-.cardContainer h2{
+.cardContainer h3{
   font-size: 24px;
   font-family: 'Markazi Text';
   font-weight: 500px;
   color: var( --color-gray);
 }
 
-.cardContainer h3{
+.cardContainer h4{
   font-size: 16px;
   font-weight: 500px;
   color: var( --color-gray);
@@ -53,17 +53,20 @@
 .order{
   display: flex;
   align-items: center;
+  gap:15px;
   padding-bottom: 40px;
+  padding-top: 1rem;
   width: 100%;
 }
 
-.cardContainer p, h6, h2, h3 {
+.cardContainer > p,  h3, h4 {
   padding: 0.5rem;
 }
 
 .cardContainer h6 {
   font-size: 14px;
   font-family: 'Markazi Text';
+
  }
 
 .cardContainer p {

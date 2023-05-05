@@ -65,7 +65,7 @@ nav {
   }
   .nav__menu {
     position: fixed;
-    top: 7vh;
+    top: 12vh;
     right: 0;
     height: 60vh;
     padding: 5rem;
@@ -75,10 +75,11 @@ nav {
     transform: translateX(100%);
     transition: 0.5s ease-in;
   }
+
   a{
     color:  var(--color-yellow);
   }
-  
+
 a:hover{
 
   color:var(--color-white);

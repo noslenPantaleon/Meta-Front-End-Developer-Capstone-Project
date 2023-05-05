@@ -1,8 +1,7 @@
 import { fetchAPI, submitAPI } from '../services/api';
-import { useFormDispatch } from '../store/formContext';
 import { ACTION } from '../store/formReducer';
+import { useFormDispatch } from '../store/formContext';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 const useForm = () => {
   useEffect(() => {
@@ -11,9 +10,15 @@ const useForm = () => {
     setTimeSlots(fetchAPI(new Date(today)));
   }, []);
 
+  //use this to get state from reducer without global context
+  // const [state, dispatch] = useReducer(FormReducer, INITIAL_STATE);
+
+  // const formState = useContext(formContext);
+  // const state = formState[0] ?? '';
+  // const dispatch = formState[1] ?? '';
+
   const dispatch = useFormDispatch();
   const [timeSlots, setTimeSlots] = useState(['']);
-  const navigate = useNavigate();
 
   const initializeTimes = (e) => {
     setTimeSlots(fetchAPI(new Date(e)));
@@ -58,7 +63,6 @@ const useForm = () => {
     dispatch({ type: ACTION.OCCASION, payload: '' });
     dispatch({ type: ACTION.GUEST, payload: '' });
     dispatch({ type: ACTION.MESSAGE, payload: '' });
-    navigate('/confirmation');
   };
 
   return {
@@ -71,6 +75,8 @@ const useForm = () => {
     handleMessage,
     handleOccasion,
     timeSlots,
+    // state,
+    // dispatch,
   };
 };
 

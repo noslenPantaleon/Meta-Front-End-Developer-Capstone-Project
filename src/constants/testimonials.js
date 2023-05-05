@@ -6,7 +6,7 @@ import testimonialD from '../images/icons_assets/16.jpg';
 export const TESTIMONIALS = [
   {
     id: 1,
-    name: 'Jhon do',
+    name: 'Mary Jane',
     image: testimonialA,
     review: '“We had such a great time celebrating my grandmothers bitthday!”',
     stars: 5,
@@ -14,7 +14,7 @@ export const TESTIMONIALS = [
 
   {
     id: 2,
-    name: 'Mary Jane',
+    name: 'Carlos Gonzalez',
     image: testimonialB,
     review: '“We had such a great time celebrating my grandmothers bitthday!”',
     stars: 5,
@@ -22,7 +22,7 @@ export const TESTIMONIALS = [
 
   {
     id: 3,
-    name: 'Carlos Gonzalez',
+    name: 'Jhon do',
     image: testimonialC,
     review: '“We had such a great time celebrating my grandmothers bitthday!”',
     stars: 5,
