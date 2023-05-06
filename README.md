@@ -1,30 +1,16 @@
-# Getting Started with Create React App
+# Frontend Meta course Capstone project.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### The challenge
 
-## Available Scripts
+Users should be able to:
 
-In the project directory, you can run:
+- Create a responsive website using create-react-app, and semantic html, with css grids and flex.
+- Design a Book table and a home page using figma.
+- User can book a table in a controlled component and validate the data with Formik before submit.
+- Create testing functions.
+- add the form data to Local storage.
 
-### `npm start`
+### Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- clone this repository and run npm install in the terminal
+- run npm start.
