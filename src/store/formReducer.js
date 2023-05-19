@@ -1,32 +1,32 @@
-const json = localStorage.getItem('dataKey');
+// const json = localStorage.getItem('dataKey');
 
-const storedName = JSON.parse(json)[0] || '';
-const storedEmail = JSON.parse(json)[1] || '';
-const storedDate = JSON.parse(json)[2] || '';
-const storedTime = JSON.parse(json)[3] || '';
-const storedGuest = JSON.parse(json)[4] || '';
-const storedOcassion = JSON.parse(json)[5] || '';
-const storedMessage = JSON.parse(json)[6] || '';
-
-const INITIAL_STATE = {
-  name: storedName,
-  email: storedEmail,
-  date: storedDate,
-  time: storedTime,
-  numberOfGuest: storedGuest,
-  occasion: storedOcassion,
-  message: storedMessage,
-};
+// const storedName = JSON.parse(json)[0] || '';
+// const storedEmail = JSON.parse(json)[1] || '';
+// const storedDate = JSON.parse(json)[2] || '';
+// const storedTime = JSON.parse(json)[3] || '';
+// const storedGuest = JSON.parse(json)[4] || '';
+// const storedOcassion = JSON.parse(json)[5] || '';
+// const storedMessage = JSON.parse(json)[6] || '';
 
 // const INITIAL_STATE = {
-//   name: '',
-//   email: '',
-//   date: '',
-//   time: '',
-//   numberOfGuest: '',
-//   occasion: '',
-//   message: '',
+//   name: storedName,
+//   email: storedEmail,
+//   date: storedDate,
+//   time: storedTime,
+//   numberOfGuest: storedGuest,
+//   occasion: storedOcassion,
+//   message: storedMessage,
 // };
+
+const INITIAL_STATE = {
+  name: '',
+  email: '',
+  date: '',
+  time: '',
+  numberOfGuest: '',
+  occasion: '',
+  message: '',
+};
 
 const ACTION = {
   NAME: 'name',
